@@ -1,0 +1,30 @@
+server:
+  port: 8888
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/das
+    username: postgres
+    password: postgres
+  # MQTT
+  mqtt:
+    # 服务器连接地址，如果有多个，用逗号隔开
+    host: tcp://10.100.0.212:1883
+    # 连接服务器默认客户端ID
+    clientId: mqttx_48a4b3c3
+    # 默认的消息推送主题，实际可在调用接口时指定
+    topic: test
+    # 用户名
+    username: admin
+    # 密码
+    password: public
+    # 连接超时
+    timeout: 5
+    # 心跳
+    keepalive: 30
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    generate-ddl: true
